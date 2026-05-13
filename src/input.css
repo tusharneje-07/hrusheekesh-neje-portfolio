@@ -142,7 +142,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../Elements/Homepage/footer_background.png");
+    background-image: url("../images/homepage/footer_background.png");
     background-size: cover;
     background-position: center bottom;
     opacity: 1;
