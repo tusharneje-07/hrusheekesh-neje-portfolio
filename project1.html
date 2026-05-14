@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Keywordscouter.ai Redesign | Hrusheekesh Neje</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+
+        <style>
+    /* ─────────────────────────────────────────────
+       Reset & Base
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #ffffff;
+      color: #111111;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────────────────────────────────
+       Layout
+    ───────────────────────────────────────────── */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    @media (max-width: 768px) { .wrap { padding: 0 24px; } }
+    @media (max-width: 480px) { .wrap { padding: 0 16px; } }
+
+    /* ─────────────────────────────────────────────
+       Back Button  (dark pill, top-left)
+    ───────────────────────────────────────────── */
+    .top-nav { padding: 32px 0 0; }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #0f0f0f;
+      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 22px 11px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background .2s;
+    }
+    .btn-back:hover { background: #2a2a2a; }
+    .btn-back svg { width: 14px; height: 14px; }
+
+    /* ─────────────────────────────────────────────
+       Project Header — centered
+    ───────────────────────────────────────────── */
+    .project-header {
+      text-align: center;
+      padding: 56px 0 0;
+    }
+
+    /* Meta row */
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 15px;
+      color: #333;
+      font-weight: 500;
+    }
+    .meta-item img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    .meta-item a { color: inherit; text-decoration: none; }
+    .meta-item a:hover { text-decoration: underline; }
+
+    /* Title */
+    .project-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    /* Subtitle */
+    .project-subtitle {
+      font-size: clamp(14px, 1.7vw, 16.5px);
+      color: #666;
+      line-height: 1.65;
+      max-width: 620px;
+      margin: 0 auto 44px;
+    }
+
+    /* Tags — pipe-separated, centered */
+    .tags-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .tag-item {
+      padding: 4px 44px;
+      text-align: center;
+    }
+    .tag-item + .tag-item {
+      border-left: 1px solid #ddd;
+    }
+    @media (max-width: 640px) {
+      .tags-row { flex-direction: column; align-items: center; gap: 16px; }
+      .tag-item + .tag-item { border-left: none; }
+      .tag-item { padding: 0 0; }
+    }
+    .tag-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+    .tag-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    /* Hero image — full width, rounded */
+    .hero-img-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 96px;
+    }
+    .hero-img-wrap img { width: 100%; height: auto; display: block; }
+
+    /* ─────────────────────────────────────────────
+       Section Label  (orange/amber)
+    ───────────────────────────────────────────── */
+    .sec-label {
+      font-family: 'Manrope', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #E8843A;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────────
+       Section Heading & Body
+    ───────────────────────────────────────────── */
+    .sec-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      color: #0d0d0d;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 22px;
+    }
+    .sec-body {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+    }
+    .sec-body + .sec-body { margin-top: 16px; }
+    .sec-body strong { font-weight: 700; color: #111; }
+
+    /* ─────────────────────────────────────────────
+       Sections spacing
+    ───────────────────────────────────────────── */
+    .section { padding: 88px 0; }
+    @media (max-width: 768px) { .section { padding: 64px 0; } }
+
+    /* ─────────────────────────────────────────────
+       Before / After  — two rounded outline cards
+    ───────────────────────────────────────────── */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 44px;
+    }
+    @media (max-width: 680px) { .ba-grid { grid-template-columns: 1fr; } }
+
+    .ba-card {
+      border: 1.5px solid #e2e2e2;
+      border-radius: 20px;
+      padding: 36px 32px 40px;
+    }
+    .ba-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 26px;
+    }
+    .ba-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .ba-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.55;
+      color: #333;
+    }
+    .ba-list li::before {
+      content: '•';
+      color: #bbb;
+      font-size: 16px;
+      flex-shrink: 0;
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────────────────────────────
+       Large light-sky-blue decorative numbers
+    ───────────────────────────────────────────── */
+    .big-num {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(64px, 8vw, 104px);
+      font-weight: 800;
+      color: #92CDE6;
+      line-height: 0.9;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+
+    /* ─────────────────────────────────────────────
+       Research Grid  — open, no card borders
+    ───────────────────────────────────────────── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
+      row-gap: 56px;
+      margin-top: 52px;
+    }
+    @media (max-width: 680px) { .research-grid { grid-template-columns: 1fr; row-gap: 40px; column-gap: 0; } }
+
+    .r-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 12px;
+      margin-top: 4px;
+    }
+    .r-body {
+      font-size: 15px;
+      line-height: 1.72;
+      color: #555;
+    }
+
+    /* ─────────────────────────────────────────────
+       Design Decisions  — numbered blocks
+    ───────────────────────────────────────────── */
+    .dd-block { margin-top: 64px; }
+
+    .dd-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 14px;
+      margin-top: 4px;
+    }
+    .dd-body {
+      font-size: 15.5px;
+      line-height: 1.78;
+      color: #444;
+      max-width: 800px;
+    }
+
+    /* Screenshot container — rounded card with border */
+    .ss-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid #ebebeb;
+      background: #f4f6fb;
+      margin-top: 28px;
+    }
+    .ss-wrap img { width: 100%; height: auto; display: block; }
+
+    /* Centered italic quote */
+    .cs-quote {
+      text-align: center;
+      font-size: clamp(17px, 2.2vw, 23px);
+      color: #111;
+      line-height: 1.5;
+      padding: 48px 48px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .cs-quote::before { content: '\201C'; }
+    .cs-quote::after  { content: '\201D'; }
+    @media (max-width: 640px) { .cs-quote { padding: 36px 0; font-size: 17px; } }
+
+    /* ─────────────────────────────────────────────
+       Visual Language
+    ───────────────────────────────────────────── */
+    .vl-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 72px;
+      margin-top: 48px;
+    }
+    @media (max-width: 700px) { .vl-cols { grid-template-columns: 1fr; gap: 32px; } }
+
+    .vl-col-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 14px;
+    }
+    .vl-col-body {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #555;
+    }
+
+    /* Component tags — outlined pills */
+    .comp-decisions { margin-top: 52px; }
+    .comp-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 10px;
+    }
+    .comp-sub {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 24px;
+    }
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      font-size: 14px;
+      font-weight: 500;
+      color: #222;
+      border: 1.5px solid #ccc;
+      border-radius: 50px;
+      padding: 8px 20px;
+      background: transparent;
+    }
+
+    /* ─────────────────────────────────────────────
+       Outcomes — 4 col open grid, light blue nums
+    ───────────────────────────────────────────── */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    @media (max-width: 760px) { .outcomes-grid { grid-template-columns: repeat(2, 1fr); gap: 48px 24px; } }
+    @media (max-width: 420px) { .outcomes-grid { grid-template-columns: 1fr; } }
+
+    .outcome-stat {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 800;
+      color: #5EC0E4;
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+    .outcome-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #555;
+    }
+
+    /* ─────────────────────────────────────────────
+       Reflections — same big-num style, 2×2 open
+    ───────────────────────────────────────────── */
+    .reflections-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
+      row-gap: 52px;
+      margin-top: 52px;
+    }
+    @media (max-width: 680px) { .reflections-grid { grid-template-columns: 1fr; column-gap: 0; row-gap: 40px; } }
+
+    .refl-title {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 10px;
+      margin-top: 4px;
+    }
+    .refl-body {
+      font-size: 15px;
+      line-height: 1.72;
+      color: #555;
+    }
+
+    /* ─────────────────────────────────────────────
+       Scroll Reveal
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+    </head>
+    <body>
+
+        <div class="wrap">
+
+            <!-- ══════════════════════════════════════════
+         BACK BUTTON
+    ═════════════════════════════════════════════ -->
+            <nav class="top-nav">
+                <a href="./index.html" class="btn-back">
+                    <svg viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 1.5L3.5 7L9 12.5" stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Back
+                </a>
+            </nav>
+
+            <!-- ══════════════════════════════════════════
+         PROJECT HEADER
+    ═════════════════════════════════════════════ -->
+            <header class="project-header reveal">
+
+                <!-- Meta row: calendar | user | link -->
+                <div class="meta-row">
+                    <div class="meta-item">
+                        <img src="./assets/images/project1/calender_icon.svg"
+                            alt aria-hidden="true" />
+                        Jan 2026
+                    </div>
+                    <div class="meta-item">
+                        <img src="./assets/images/project1/user_icon.svg" alt
+                            aria-hidden="true" />
+                        Keyword Scouter.AI
+                    </div>
+                    <div class="meta-item">
+                        <img src="./assets/images/project1/link_icon.svg" alt
+                            aria-hidden="true" />
+                        <a href="https://keywordscouter.ai/" target="_blank"
+                            rel="noopener">https://keywordscouter.ai/</a>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h1 class="project-title">Keywordscouter.ai Redesign</h1>
+
+                <!-- Subtitle -->
+                <p class="project-subtitle">
+                    Transforming a keyword research SaaS from information-dense
+                    to conversion-focused.
+                    Cleaner hierarchy, smarter flows, and a brand identity that
+                    signals trust.
+                </p>
+
+                <!-- Tags: pipe-separated -->
+                <div class="tags-row">
+                    <div class="tag-item">
+                        <div class="tag-label">Project</div>
+                        <div class="tag-value">KeywordScouter.ai</div>
+                    </div>
+                    <div class="tag-item">
+                        <div class="tag-label">Scope</div>
+                        <div class="tag-value">SaaS Website Redesign</div>
+                    </div>
+                    <div class="tag-item">
+                        <div class="tag-label">Role</div>
+                        <div class="tag-value">UI UX Designer</div>
+                    </div>
+                    <div class="tag-item">
+                        <div class="tag-label">Deliverable</div>
+                        <div class="tag-value">High-Fidelity UI</div>
+                    </div>
+                </div>
+
+                <!-- Hero image (project_img_1) -->
+                <div class="hero-img-wrap">
+                    <img
+                        src="./assets/images/project1/project_img_1.png"
+                        alt="KeywordScouter.ai redesign — full laptop mockup"
+                        loading="eager" />
+                </div>
+
+            </header>
+
+            <!-- ══════════════════════════════════════════
+         01 — OVERVIEW
+    ═════════════════════════════════════════════ -->
+            <section class="section reveal">
+                <span class="sec-label">01 Overview</span>
+                <h2 class="sec-title">What is Keywordscouter.ai?</h2>
+                <p class="sec-body"><strong>Keyword Scouter helps teams find
+                        high-intent conversations across LinkedIn, Reddit, and
+                        X.</strong></p>
+                <p class="sec-body">The product itself solves a very clear
+                    problem: helping people discover valuable conversations and
+                    act on them quickly. The website, however, had the right
+                    information without the strongest storytelling. My goal was
+                    to redesign the landing page so the value felt immediate,
+                    visible, and easier to trust.</p>
+                <p class="sec-body">The product's core promise is powerful: stop
+                    guessing, start scouting. The challenge? The original
+                    website didn't live up to that promise visually or
+                    experientially — leading to a conversion gap between a
+                    capable product and a landing page that didn't reflect
+                    it.</p>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+         02 — THE PROBLEM
+    ═════════════════════════════════════════════ -->
+            <section class="section reveal">
+                <span class="sec-label">02 — The Problem</span>
+                <h2 class="sec-title">A product worth using, a website holding
+                    it back</h2>
+                <p class="sec-body">The original site communicated the right
+                    features but lost users in the translation. Visual noise,
+                    unclear hierarchy, and a landing page that felt generic
+                    compared to the product's actual capability created a
+                    drop-off before users ever reached the CTA.</p>
+
+                <div class="ba-grid">
+                    <div class="ba-card">
+                        <p class="ba-card-label">Before — Pain Points</p>
+                        <ul class="ba-list">
+                            <li>Hero section lacked a clear, singular CTA</li>
+                            <li>Feature sections were dense and hard to
+                                scan</li>
+                            <li>Visual language felt inconsistent across
+                                sections</li>
+                            <li>Pricing lacked hierarchy — both plans felt
+                                equal</li>
+                            <li>Social proof section underused, low visual
+                                impact</li>
+                            <li>FAQ section buried important conversion
+                                moments</li>
+                            <li>Typography felt generic — no distinctive
+                                personality</li>
+                            <li>No strategic use of contrast or visual
+                                weight</li>
+                        </ul>
+                    </div>
+                    <div class="ba-card">
+                        <p class="ba-card-label">After — Design Decisions</p>
+                        <ul class="ba-list">
+                            <li>Hero anchored by bold headline + single clear
+                                CTA</li>
+                            <li>Feature cards use numbered sections with clear
+                                rhythm</li>
+                            <li>Cohesive soft indigo palette used with
+                                purpose</li>
+                            <li>Pricing redesigned to spotlight Pro as
+                                recommended</li>
+                            <li>Testimonials elevated with photos and named
+                                attribution</li>
+                            <li>FAQ integrated into scannable accordion
+                                layout</li>
+                            <li>Modern display pairing with clean body type</li>
+                            <li>Strategic contrast to direct the eye through the
+                                page</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+         03 — RESEARCH & DISCOVERY
+    ═════════════════════════════════════════════ -->
+            <section class="section reveal">
+                <span class="sec-label">03 — Research &amp; Discovery</span>
+                <h2 class="sec-title">Understanding the user and market</h2>
+                <p class="sec-body">Before redesigning any pixel, I analysed the
+                    product's target audience, studied competitor landing pages
+                    in the SEO/keyword research space, and identified patterns
+                    in what causes users to trust — or abandon — these
+                    tools.</p>
+
+                <div class="research-grid">
+                    <div class="reveal">
+                        <div class="big-num">01</div>
+                        <h3 class="r-title">Audience Analysis</h3>
+                        <p class="r-body">Target users are content marketers,
+                            solopreneurs, and small agencies who are overwhelmed
+                            by complex SEO tools. They want quick wins, not
+                            dashboards.</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="big-num">02</div>
+                        <h3 class="r-title">Competitor Audit</h3>
+                        <p class="r-body">Tools like Ahrefs, Semrush, and
+                            Ubersuggest are functionally richer but far more
+                            complex. KeywordScouter's positioning advantage is
+                            simplicity — the redesign needed to reinforce
+                            that.</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="big-num">03</div>
+                        <h3 class="r-title">Conversion Patterns</h3>
+                        <p class="r-body">Free trial CTAs, numbered onboarding
+                            flows, and social proof near the fold consistently
+                            outperform generic "sign up" approaches in SaaS
+                            landing pages.</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="big-num">04</div>
+                        <h3 class="r-title">Content Hierarchy</h3>
+                        <p class="r-body">Users scan in an F-pattern. The most
+                            critical value propositions — speed, simplicity,
+                            results — needed to appear in the first 2 screen
+                            heights.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+         04 — DESIGN DECISIONS
+    ═════════════════════════════════════════════ -->
+            <section class="section">
+                <div class="reveal">
+                    <span class="sec-label">04 — Design Decisions</span>
+                    <h2 class="sec-title">Section-by-section redesign
+                        breakdown</h2>
+                    <p class="sec-body">Each section of the page was rethought —
+                        not just visually, but structurally. Here's the
+                        rationale behind every key design decision, paired with
+                        the actual redesigned output.</p>
+                </div>
+
+                <!-- 01 Hero -->
+                <div class="dd-block reveal">
+                    <div class="big-num">01</div>
+                    <h3 class="dd-title">Hero - Stop Guessing, Start
+                        Scouting</h3>
+                    <p class="dd-body">The headline stays—it's strong. The
+                        redesign boosts it with larger type, better contrast, a
+                        tighter sub-headline, and a single clear CTA. The
+                        product mockup now leads as the hero visual.</p>
+                    <div class="ss-wrap">
+                        <img src="./assets/images/project1/project_img_2.png"
+                            alt="Redesigned hero section — Stop Guessing, Start Scouting"
+                            loading="lazy" />
+                    </div>
+                </div>
+
+                <p class="cs-quote">Bold headline, single CTA, and a product
+                    preview creating an immediate hook.</p>
+
+                <!-- 02 Onboarding -->
+                <div class="dd-block reveal">
+                    <div class="big-num">02</div>
+                    <h3 class="dd-title">3-Step Onboarding Flow</h3>
+                    <p class="dd-body">The "Get started in 3 simple steps"
+                        section was redesigned with clearly numbered cards and
+                        improved iconography. Steps were given more breathing
+                        room — reinforcing the "simple" promise with visual
+                        evidence, not just copy.</p>
+                    <div class="ss-wrap">
+                        <img src="./assets/images/project1/project_img_3.png"
+                            alt="3-step onboarding flow redesign"
+                            loading="lazy" />
+                    </div>
+                </div>
+
+                <p class="cs-quote">Numbered, scannable steps that make the
+                    product feel instantly accessible</p>
+
+                <!-- 03 Key Features -->
+                <div class="dd-block reveal">
+                    <div class="big-num">03</div>
+                    <h3 class="dd-title">Key Features — Numbered, Alternating
+                        Layout</h3>
+                    <p class="dd-body">Features are now organized into numbered,
+                        alternating text-and-visual rows. Each section
+                        (Discovery, Classification, Live, Targeting, Outreach,
+                        Analytics) includes a brief description and UI preview,
+                        giving every feature clear emphasis.</p>
+                    <div class="ss-wrap">
+                        <img src="./assets/images/project1/project_img_4.png"
+                            alt="Key features redesign — numbered alternating layout with 6 sections"
+                            loading="lazy" />
+                    </div>
+                </div>
+
+                <p class="cs-quote">Six feature sections. Each given space,
+                    structure, and a live UI preview</p>
+
+                <!-- 04 Pricing -->
+                <div class="dd-block reveal">
+                    <div class="big-num">04</div>
+                    <h3 class="dd-title">Pricing — Pro Pack as the Focal
+                        Point</h3>
+                    <p class="dd-body">The pricing section was restructured to
+                        visually recommend the Pro Pack: a highlighted card with
+                        stronger contrast, a "Most Popular" badge, and clear
+                        feature differentiation from Starter. This guides
+                        decision-making rather than presenting both options as
+                        equals.</p>
+                    <div class="ss-wrap">
+                        <img src="./assets/images/project1/project_img_5.png"
+                            alt="Pricing section redesign — Pro Pack highlighted as most popular"
+                            loading="lazy" />
+                    </div>
+                </div>
+
+                <p class="cs-quote">Visual hierarchy that nudges users toward
+                    the higher-value plan</p>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+         05 — VISUAL LANGUAGE
+    ═════════════════════════════════════════════ -->
+            <section class="section reveal">
+                <span class="sec-label">05 — Visual Language</span>
+                <h2 class="sec-title">A design system rooted in trust and
+                    clarity</h2>
+
+                <!-- Two-column text: Color | Typography -->
+                <div class="vl-cols">
+                    <div>
+                        <h3 class="vl-col-title">Color Philosophy</h3>
+                        <p class="vl-col-body">The color palette centres on a
+                            soft indigo-blue — conveying intelligence and
+                            reliability without the coldness of pure blue. White
+                            and light-grey backgrounds create breathing room,
+                            while the accent blue draws attention exclusively to
+                            CTAs.</p>
+                    </div>
+                    <div>
+                        <h3 class="vl-col-title">Typography</h3>
+                        <p class="vl-col-body">A modern geometric sans-serif for
+                            UI text (clean, fast readability) paired with
+                            heavier display weights for headlines. The type
+                            scale follows a clear hierarchy — no ambiguity
+                            between headings, subheadings, body, and labels.</p>
+                    </div>
+                </div>
+
+                <!-- Design system screenshot -->
+                <div class="ss-wrap" style="margin-top: 48px;">
+                    <img src="./assets/images/project1/project_img_6.png"
+                        alt="Design system — colors, text inputs, button sizes"
+                        loading="lazy" />
+                </div>
+
+                <!-- Component Decisions -->
+                <div class="comp-decisions reveal">
+                    <h3 class="comp-title">Component Decisions</h3>
+                    <p class="comp-sub">Every component choice was intentional —
+                        reinforcing the core theme of simplicity and trust.</p>
+                    <div class="pills">
+                        <span class="pill">Rounded pill CTAs</span>
+                        <span class="pill">Card-based feature layout</span>
+                        <span class="pill">Numbered section headers</span>
+                        <span class="pill">Alternating text/image rows</span>
+                        <span class="pill">Badge-driven social proof</span>
+                        <span class="pill">Highlighted pricing card</span>
+                        <span class="pill">Accordion FAQ</span>
+                        <span class="pill">Sticky nav with blur</span>
+                        <span class="pill">Subtle card shadows</span>
+                        <span class="pill">Consistent 8px grid</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+         06 — OUTCOMES & IMPACT
+    ═════════════════════════════════════════════ -->
+            <section class="section reveal">
+                <span class="sec-label">06 — Outcomes &amp; Impact</span>
+                <h2 class="sec-title">What the redesign changes</h2>
+                <p class="sec-body">The redesign closes the gap between product
+                    quality and brand perception. A landing page that looks as
+                    capable as the product it represents is the single biggest
+                    lever for conversion in a SaaS context.</p>
+
+                <div class="outcomes-grid">
+                    <div>
+                        <div class="outcome-stat">^ CTA</div>
+                        <p class="outcome-desc">Single, clear primary action per
+                            section — no competing choices</p>
+                    </div>
+                    <div>
+                        <div class="outcome-stat">6x</div>
+                        <p class="outcome-desc">Feature sections redesigned with
+                            structured hierarchy</p>
+                    </div>
+                    <div>
+                        <div class="outcome-stat">2</div>
+                        <p class="outcome-desc">Pricing tiers visually
+                            differentiated to guide upgrade decisions</p>
+                    </div>
+                    <div>
+                        <div class="outcome-stat">∞</div>
+                        <p class="outcome-desc">Scalable component system for
+                            future feature additions</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+         08 — REFLECTIONS
+    ═════════════════════════════════════════════ -->
+            <section class="section reveal">
+                <span class="sec-label">08 — Reflections</span>
+                <h2 class="sec-title">What I learned along the way</h2>
+
+                <div class="reflections-grid">
+                    <div class="reveal">
+                        <div class="big-num">01</div>
+                        <h3 class="refl-title">Clarity wins</h3>
+                        <p class="refl-body">Landing pages do not just explain a
+                            product. They help frame a decision.</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="big-num">02</div>
+                        <h3 class="refl-title">Screenshots should persuade</h3>
+                        <p class="refl-body">Product visuals are strongest when
+                            they are woven into the story rather than used as
+                            decoration.</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="big-num">03</div>
+                        <h3 class="refl-title">B2B still needs emotion</h3>
+                        <p class="refl-body">Even practical SaaS tools benefit
+                            from warmth, softness, and a clear visual mood.</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="big-num">04</div>
+                        <h3 class="refl-title">Calm builds trust</h3>
+                        <p class="refl-body">Whitespace, rhythm, and restraint
+                            often make a page feel more premium than complexity
+                            does.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /wrap -->
+
+        <!-- ══════════════════════════════════════════════
+       FOOTER  (provided markup, adapted)
+  ════════════════════════════════════════════════ -->
+        <footer id="footer" class="relative z-10 w-full px-0 pb-0">
+            <div class="footer-shell">
+                <div class="footer-content reveal">
+                    <p class="footer-intro">Looking for product, website, or
+                        case study design that feels thoughtful and
+                        conversion-aware?</p>
+                    <div class="footer-actions">
+                        <a href="#" class="footer-primary">Start
+                            Conversation</a>
+                        <a href="#hero" class="footer-secondary">Back to Top</a>
+                    </div>
+                </div>
+                <div class="footer-shots" aria-hidden="true">
+                    <img src="./assets/images/homepage/footer_SS1.png"
+                        alt="Project screenshot 1"
+                        class="footer-shot footer-shot-1" />
+                    <img src="./assets/images/homepage/footer_SS2.png"
+                        alt="Project screenshot 2"
+                        class="footer-shot footer-shot-2" />
+                    <img src="./assets/images/homepage/footer_SS3.png"
+                        alt="Project screenshot 3"
+                        class="footer-shot footer-shot-3" />
+                    <img src="./assets/images/homepage/footer_SS4.png"
+                        alt="Project screenshot 4"
+                        class="footer-shot footer-shot-4" />
+                </div>
+                <span class="flex w-full justify-between text-center align-middle">
+                    <span class="footer-copyright">&copy; 2024 Hrusheekesh
+                        Naje</span>
+                    <a href="#hero" class="footer-backtop">&uarr; Back to top</a>
+                </span>
+            </div>
+        </footer>
+
+        <script>
+    /* Scroll Reveal */
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  </script>
+    </body>
+</html>

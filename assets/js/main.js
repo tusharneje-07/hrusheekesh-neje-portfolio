@@ -18,3 +18,32 @@ if (revealItems.length > 0) {
 
   revealItems.forEach((item) => observer.observe(item));
 }
+
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mobileMenu = document.querySelector("[data-mobile-menu]");
+
+if (menuToggle && mobileMenu) {
+  const setMenuState = (open) => {
+    menuToggle.classList.toggle("is-open", open);
+    mobileMenu.classList.toggle("is-open", open);
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    mobileMenu.setAttribute("aria-hidden", open ? "false" : "true");
+  };
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.contains("is-open");
+    setMenuState(!isOpen);
+  });
+
+  mobileMenu.addEventListener("click", (event) => {
+    if (event.target === mobileMenu) {
+      setMenuState(false);
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMenuState(false);
+    }
+  });
+}
