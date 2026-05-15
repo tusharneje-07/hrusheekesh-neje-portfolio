@@ -22,6 +22,8 @@ if (revealItems.length > 0) {
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 
+document.querySelector(".footer-copy").textContent = `© ${new Date().getFullYear()} Hrusheekesh Neje.`;
+
 if (menuToggle && mobileMenu) {
   const setMenuState = (open) => {
     menuToggle.classList.toggle("is-open", open);

@@ -200,7 +200,7 @@
   }
 
   .project-title {
-    @apply mt-6 flex min-h-[78px] items-start justify-center px-2 text-center text-[20px] leading-[1.3] tracking-[-0.012em] text-brand-black md:text-[22px] font-agrandir;
+    @apply mt-6 flex items-start justify-center px-2 text-center text-[20px] leading-[1.3] tracking-[-0.012em] text-brand-black md:text-[22px] font-agrandir;
   }
 
   .about-shell {
@@ -366,6 +366,17 @@
 
   .footer-backtop {
     @apply absolute bottom-6 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 text-[14px] text-brand-black/70;
+  }
+
+  .footer-meta {
+    @apply absolute pr-20 pl-20 inset-x-0 bottom-6 z-10 flex w-full items-center justify-between px-6 text-[14px] text-brand-black/70;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .footer-copy,
+  .footer-name {
+    @apply font-sans;
   }
 
   @media (min-width: 768px) {

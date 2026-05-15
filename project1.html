@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700;800&display=swap"
             rel="stylesheet" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
 
@@ -95,19 +95,16 @@
     /* Title */
     .project-title {
       font-family: 'Agrandir', 'Manrope', sans-serif;
-      font-size: clamp(36px, 5.5vw, 64px);
-      font-weight: 700;
+      font-size: clamp(32px, 32px, 32px);
       color: #0d0d0d;
       line-height: 1.1;
       letter-spacing: -0.025em;
-      margin-bottom: 18px;
     }
 
     /* Subtitle */
     .project-subtitle {
       font-size: clamp(14px, 1.7vw, 16.5px);
       color: #666;
-      line-height: 1.65;
       max-width: 620px;
       margin: 0 auto 44px;
     }
@@ -121,28 +118,37 @@
       margin-bottom: 56px;
     }
     .tag-item {
-      padding: 4px 44px;
-      text-align: center;
-    }
-    .tag-item + .tag-item {
-      border-left: 1px solid #ddd;
-    }
+        position: relative;
+        padding: 4px 44px;
+        text-align: center;
+        }
+
+        .tag-item + .tag-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        width: 1px;
+        height: 20px; /* border height */
+        
+        background: #4CB8E7;
+        }
     @media (max-width: 640px) {
       .tags-row { flex-direction: column; align-items: center; gap: 16px; }
       .tag-item + .tag-item { border-left: none; }
       .tag-item { padding: 0 0; }
     }
     .tag-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      font-size: 10px;
+      letter-spacing: 0.20em;
       text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 6px;
+      color: #0c0c0c;
     }
     .tag-value {
+      font-family: 'Agrandir', 'Manrope', sans-serif;
       font-size: 15px;
-      font-weight: 600;
       color: #111;
     }
 
@@ -163,7 +169,7 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #E8843A;
+      color: #FE941E;
       margin-bottom: 20px;
       display: block;
     }
@@ -173,8 +179,7 @@
     ───────────────────────────────────────────── */
     .sec-title {
       font-family: 'Agrandir', 'Manrope', sans-serif;
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 700;
+      font-size: 1.75rem;
       color: #0d0d0d;
       line-height: 1.15;
       letter-spacing: -0.025em;
@@ -184,6 +189,7 @@
       font-size: 16px;
       line-height: 1.8;
       color: #444;
+      font-weight: 300;
     }
     .sec-body + .sec-body { margin-top: 16px; }
     .sec-body strong { font-weight: 700; color: #111; }
@@ -191,8 +197,8 @@
     /* ─────────────────────────────────────────────
        Sections spacing
     ───────────────────────────────────────────── */
-    .section { padding: 88px 0; }
-    @media (max-width: 768px) { .section { padding: 64px 0; } }
+    .section { padding-top: 88px; }
+    @media (max-width: 768px) { .section { padding-top: 64px; } }
 
     /* ─────────────────────────────────────────────
        Before / After  — two rounded outline cards
@@ -240,9 +246,9 @@
     ───────────────────────────────────────────── */
     .big-num {
       font-family: 'Manrope', sans-serif;
-      font-size: clamp(64px, 8vw, 104px);
+      font-size: 2rem;
       font-weight: 800;
-      color: #92CDE6;
+      color: #D5F2FF;
       line-height: 0.9;
       margin-bottom: 12px;
       letter-spacing: -0.04em;
@@ -261,9 +267,9 @@
     @media (max-width: 680px) { .research-grid { grid-template-columns: 1fr; row-gap: 40px; column-gap: 0; } }
 
     .r-title {
-      font-family: 'Agrandir', 'Manrope', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.09rem;
+      font-weight: 600;
       color: #0d0d0d;
       margin-bottom: 12px;
       margin-top: 4px;
@@ -280,9 +286,9 @@
     .dd-block { margin-top: 64px; }
 
     .dd-title {
-      font-family: 'Agrandir', 'Manrope', sans-serif;
-      font-size: clamp(20px, 2.4vw, 26px);
-      font-weight: 700;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #0d0d0d;
       margin-bottom: 14px;
       margin-top: 4px;
@@ -301,18 +307,19 @@
       border: 1.5px solid #ebebeb;
       background: #f4f6fb;
       margin-top: 28px;
+      margin: 3.5rem;
     }
     .ss-wrap img { width: 100%; height: auto; display: block; }
 
     /* Centered italic quote */
     .cs-quote {
+        font-family: 'Agrandir', 'Manrope', sans-serif;
       text-align: center;
       font-size: clamp(17px, 2.2vw, 23px);
       color: #111;
       line-height: 1.5;
       padding: 48px 48px;
       font-style: normal;
-      font-weight: 400;
     }
     .cs-quote::before { content: '\201C'; }
     .cs-quote::after  { content: '\201D'; }
@@ -330,9 +337,9 @@
     @media (max-width: 700px) { .vl-cols { grid-template-columns: 1fr; gap: 32px; } }
 
     .vl-col-title {
-      font-family: 'Agrandir', 'Manrope', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.09rem;
+      font-weight: 600;
       color: #0d0d0d;
       margin-bottom: 14px;
     }
@@ -345,9 +352,9 @@
     /* Component tags — outlined pills */
     .comp-decisions { margin-top: 52px; }
     .comp-title {
-      font-family: 'Agrandir', 'Manrope', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
       color: #0d0d0d;
       margin-bottom: 10px;
     }
@@ -363,8 +370,9 @@
       gap: 10px;
     }
     .pill {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
       font-size: 14px;
-      font-weight: 500;
       color: #222;
       border: 1.5px solid #ccc;
       border-radius: 50px;
@@ -413,14 +421,16 @@
     @media (max-width: 680px) { .reflections-grid { grid-template-columns: 1fr; column-gap: 0; row-gap: 40px; } }
 
     .refl-title {
-      font-family: 'Agrandir', 'Manrope', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
       color: #0d0d0d;
       margin-bottom: 10px;
       margin-top: 4px;
     }
     .refl-body {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 300;
       font-size: 15px;
       line-height: 1.72;
       color: #555;
@@ -448,7 +458,7 @@
          BACK BUTTON
     ═════════════════════════════════════════════ -->
             <nav class="top-nav">
-                <a href="./index.html" class="btn-back">
+                <a href="./index.html" class="btn-back font-sans">
                     <svg viewBox="0 0 14 14" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1.5L3.5 7L9 12.5" stroke="currentColor"
@@ -462,7 +472,7 @@
             <!-- ══════════════════════════════════════════
          PROJECT HEADER
     ═════════════════════════════════════════════ -->
-            <header class="project-header reveal">
+            <header class="project-header reveal font-agrandir">
 
                 <!-- Meta row: calendar | user | link -->
                 <div class="meta-row">
@@ -485,7 +495,7 @@
                 </div>
 
                 <!-- Title -->
-                <h1 class="project-title">Keywordscouter.ai Redesign</h1>
+                <h1 class="project-title font-agrandir mb-2">Keywordscouter.ai Redesign</h1>
 
                 <!-- Subtitle -->
                 <p class="project-subtitle">
@@ -531,16 +541,18 @@
             <section class="section reveal">
                 <span class="sec-label">01 Overview</span>
                 <h2 class="sec-title">What is Keywordscouter.ai?</h2>
-                <p class="sec-body"><strong>Keyword Scouter helps teams find
-                        high-intent conversations across LinkedIn, Reddit, and
-                        X.</strong></p>
-                <p class="sec-body">The product itself solves a very clear
+                <p class="sec-body">
+                    <span class="font-[Manrope]" style="font-weight: 600;">
+                        Keyword Scouter helps teams find high-intent conversations across LinkedIn, Reddit, and X.
+                    </span>
+                </p>
+                <p class="sec-body" style="font-weight: 300;">The product itself solves a very clear
                     problem: helping people discover valuable conversations and
                     act on them quickly. The website, however, had the right
                     information without the strongest storytelling. My goal was
                     to redesign the landing page so the value felt immediate,
                     visible, and easier to trust.</p>
-                <p class="sec-body">The product's core promise is powerful: stop
+                <p class="sec-body" style="font-weight: 300;">The product's core promise is powerful: stop
                     guessing, start scouting. The challenge? The original
                     website didn't live up to that promise visually or
                     experientially — leading to a conversion gap between a
@@ -555,7 +567,7 @@
                 <span class="sec-label">02 — The Problem</span>
                 <h2 class="sec-title">A product worth using, a website holding
                     it back</h2>
-                <p class="sec-body">The original site communicated the right
+                <p class="sec-body" style="font-weight: 300;">The original site communicated the right
                     features but lost users in the translation. Visual noise,
                     unclear hierarchy, and a landing page that felt generic
                     compared to the product's actual capability created a
@@ -778,7 +790,7 @@
                 </div>
 
                 <!-- Design system screenshot -->
-                <div class="ss-wrap" style="margin-top: 48px;">
+                <div class="ss-wrap" style="margin-top: 48px; margin: 20px 0;">
                     <img src="./assets/images/project1/project_img_6.png"
                         alt="Design system — colors, text inputs, button sizes"
                         loading="lazy" />
@@ -881,7 +893,7 @@
         <!-- ══════════════════════════════════════════════
        FOOTER  (provided markup, adapted)
   ════════════════════════════════════════════════ -->
-        <footer id="footer" class="relative z-10 w-full px-0 pb-0">
+        <footer id="footer" class="relative z-10 w-full px-0 pb-0 mt-20">
             <div class="footer-shell">
                 <div class="footer-content reveal">
                     <p class="footer-intro">Looking for product, website, or
@@ -907,11 +919,12 @@
                         alt="Project screenshot 4"
                         class="footer-shot footer-shot-4" />
                 </div>
-                <span class="flex w-full justify-between text-center align-middle">
-                    <span class="footer-copyright">&copy; 2024 Hrusheekesh
-                        Naje</span>
-                    <a href="#hero" class="footer-backtop">&uarr; Back to top</a>
-                </span>
+
+                <div class="footer-meta">
+            <span class="footer-copy">Hero - Stop Guessing, Start Scouting</span>
+            <span class="footer-name">© 2026 Hrusheekesh Neje.</span>
+          </div>
+
             </div>
         </footer>
 
