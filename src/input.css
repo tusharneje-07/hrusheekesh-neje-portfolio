@@ -391,6 +391,15 @@
     }
   }
 
+  .hero-blob {
+    animation: blob-drift 16s linear infinite;
+    will-change: transform;
+  }
+
+  .hero-blob--blue {
+    animation: blob-drift-alt 20s linear infinite;
+  }
+
 
   .reveal-up {
     opacity: 0;
@@ -448,5 +457,56 @@
   100% {
     transform: scale(1.75);
     opacity: 0;
+  }
+}
+
+@keyframes blob-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  12% {
+    transform: translate3d(180px, -90px, 0) scale(1.06);
+  }
+  27% {
+    transform: translate3d(260px, 120px, 0) scale(0.96);
+  }
+  43% {
+    transform: translate3d(90px, 220px, 0) scale(1.04);
+  }
+  58% {
+    transform: translate3d(-140px, 160px, 0) scale(0.98);
+  }
+  73% {
+    transform: translate3d(-260px, 40px, 0) scale(1.05);
+  }
+  88% {
+    transform: translate3d(-120px, -140px, 0) scale(0.97);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes blob-drift-alt {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  18% {
+    transform: translate3d(-200px, 60px, 0) scale(1.04);
+  }
+  36% {
+    transform: translate3d(-280px, 220px, 0) scale(0.95);
+  }
+  52% {
+    transform: translate3d(-60px, 280px, 0) scale(1.06);
+  }
+  70% {
+    transform: translate3d(200px, 180px, 0) scale(0.98);
+  }
+  86% {
+    transform: translate3d(120px, -40px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
