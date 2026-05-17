@@ -36,6 +36,11 @@
     cursor: url("../images/homepage/cursor.svg") 3 2, auto;
   }
 
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+
   p {
     font-family: "Manrope", sans-serif;
   }
@@ -89,7 +94,8 @@
   }
 
   .mobile-menu {
-    @apply pointer-events-none fixed inset-0 z-40 opacity-0;
+    @apply pointer-events-none fixed inset-0 opacity-0;
+    z-index: 2147483647;
     transition: opacity 260ms ease;
   }
 
@@ -103,7 +109,8 @@
   }
 
   .mobile-menu-panel {
-    position: absolute;
+    position: fixed;
+    z-index: 2147483647;
     right: 16px;
     top: 72px;
     width: min(92vw, 320px);
@@ -369,9 +376,15 @@
   }
 
   .footer-meta {
-    @apply absolute pr-20 pl-20 inset-x-0 bottom-6 z-10 flex w-full items-center justify-between px-6 text-[14px] text-brand-black/70;
+    @apply absolute pr-20 pl-20 inset-x-0 bottom-6 z-10 flex w-full flex-col items-center gap-1 px-6 text-[14px] text-brand-black/70;
     font-weight: 700;
     font-family: 'Manrope', sans-serif;
+  }
+
+  @media (min-width: 640px) {
+    .footer-meta {
+      @apply flex-row items-center justify-between;
+    }
   }
 
   .footer-copy,

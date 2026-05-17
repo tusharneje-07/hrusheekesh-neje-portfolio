@@ -37,6 +37,15 @@
   .back-btn:hover { opacity: 0.8; }
   .back-btn svg { width: 16px; height: 16px; }
 
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 18px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
   /* ─── Hero Section ─── */
   .hero {
     text-align: center;
@@ -493,12 +502,14 @@
 <body id="hero">
 
 <!-- Back -->
-<a href="./index.html" class="back-btn">
-  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 12L6 8L10 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  Back
-</a>
+<nav class="top-nav">
+  <a href="./index.html" class="back-btn">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 12L6 8L10 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Back
+  </a>
+</nav>
 
 <!-- ─── HERO ─── -->
 <section class="hero">
@@ -1024,7 +1035,7 @@
       <img src="./assets/images/homepage/footer_SS4.png" alt="Project screenshot 4" class="footer-shot footer-shot-4" />
     </div>
     <div class="footer-meta">
-      <span class="footer-copy">Copyright © 2024</span>
+      <span class="footer-copy">Copyright © <span data-current-year></span></span>
       <span class="footer-name">Hrusheekesh Neje</span>
     </div>
   </div>
