@@ -1,4 +1,39 @@
 const revealItems = document.querySelectorAll(".reveal-up");
+const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+const THEME_STORAGE_KEY = "hrushee-theme";
+
+const applyTheme = (theme) => {
+  const isDark = theme === "dark";
+  document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+
+  themeToggles.forEach((toggle) => {
+    toggle.classList.toggle("is-active", isDark);
+    toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+    toggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+  });
+};
+
+const getInitialTheme = () => {
+  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
+
+applyTheme(getInitialTheme());
+
+if (themeToggles.length > 0) {
+  themeToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const currentTheme = document.body.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    });
+  });
+}
 
 if (revealItems.length > 0) {
   const observer = new IntersectionObserver(
@@ -22,7 +57,10 @@ if (revealItems.length > 0) {
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 
-document.querySelector(".footer-copy").textContent = `© ${new Date().getFullYear()} Hrusheekesh Neje.`;
+const footerCopy = document.querySelector(".footer-copy");
+if (footerCopy) {
+  footerCopy.textContent = `© ${new Date().getFullYear()} Hrusheekesh Neje.`;
+}
 
 if (menuToggle && mobileMenu) {
   const menuLinks = mobileMenu.querySelectorAll("a");

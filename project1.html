@@ -39,13 +39,20 @@
     /* ─────────────────────────────────────────────
        Back Button  (dark pill, top-left)
     ───────────────────────────────────────────── */
-    .top-nav {
+.top-nav {
   position: sticky;
   top: 0;
   z-index: 50;
   padding: 18px 0;
   background: #ffffff;
   position: sticky;
+}
+
+.top-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .top-nav::after {
@@ -57,7 +64,7 @@
   height: 1px;
 
   background: linear-gradient(
-    to left,
+    to left ,
     transparent,
     rgba(0, 0, 0, 0.2),
     transparent
@@ -81,6 +88,21 @@
     }
     .btn-back:hover { background: #2a2a2a; }
     .btn-back svg { width: 14px; height: 14px; }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid #d7d7d7;
+      background: #0b2742;
+      box-shadow: 0 10px 22px rgba(10, 30, 52, 0.25);
+      cursor: pointer;
+    }
+    .theme-toggle img { width: 22px; height: 22px; transition: transform .26s ease, filter .26s ease; }
+    .theme-toggle.is-active img { transform: rotate(180deg); }
 
     /* ─────────────────────────────────────────────
        Project Header — centered
@@ -469,6 +491,50 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    body[data-theme="dark"] {
+      background: #121212;
+      color: #eceff4;
+    }
+    body[data-theme="dark"] .top-nav { background: #121212; }
+    body[data-theme="dark"] .project-title,
+    body[data-theme="dark"] .sec-title,
+    body[data-theme="dark"] .tag-value,
+    body[data-theme="dark"] .r-title,
+    body[data-theme="dark"] .dd-title,
+    body[data-theme="dark"] .vl-col-title,
+    body[data-theme="dark"] .comp-title,
+    body[data-theme="dark"] .refl-title,
+    body[data-theme="dark"] .meta-item,
+    body[data-theme="dark"] .tag-label,
+    body[data-theme="dark"] .comp-sub,
+    body[data-theme="dark"] .pill { color: #f3f5f8; }
+    body[data-theme="dark"] .project-subtitle,
+    body[data-theme="dark"] .sec-body,
+    body[data-theme="dark"] .ba-list li,
+    body[data-theme="dark"] .r-body,
+    body[data-theme="dark"] .dd-body,
+    body[data-theme="dark"] .vl-col-body,
+    body[data-theme="dark"] .outcome-desc,
+    body[data-theme="dark"] .refl-body { color: #b8c0cd; }
+    body[data-theme="dark"] .sec-body strong,
+    body[data-theme="dark"] .pill,
+    body[data-theme="dark"] .cs-quote { color: #e8edf5; }
+    body[data-theme="dark"] .ba-card,
+    body[data-theme="dark"] .compare-col,
+    body[data-theme="dark"] .insight-card,
+    body[data-theme="dark"] .metric-card,
+    body[data-theme="dark"] .timeline-card,
+    body[data-theme="dark"] .top-card,
+    body[data-theme="dark"] .quote-card { background: #1c1c1f; border-color: #34343a; }
+    body[data-theme="dark"] .ss-wrap { background: #1c1c1f; border-color: #34343a; }
+    body[data-theme="dark"] .pill { border-color: #5a6170; }
+    body[data-theme="dark"] .meta-item img { filter: brightness(0) invert(0.92); }
+    body[data-theme="dark"] .section[style*="background:#fafbfe"] { background: #17181c !important; }
+    body[data-theme="dark"] .theme-toggle { background:#27272e; border-color:#464650; box-shadow: 0 10px 22px rgba(0,0,0,.38); }
+    body[data-theme="dark"] .theme-toggle img { filter: brightness(1.15) saturate(0.9); }
+    body[data-theme="dark"] .btn-back { background: #26262d; color: #eff3f8; border: 1px solid #44444e; }
+    body[data-theme="dark"] .btn-back:hover { background: #2f2f38; }
   </style>
     </head>
     <body>
@@ -479,15 +545,20 @@
          BACK BUTTON
     ═════════════════════════════════════════════ -->
             <nav class="top-nav">
-                <a href="./index.html" class="btn-back font-sans">
-                    <svg viewBox="0 0 14 14" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 1.5L3.5 7L9 12.5" stroke="currentColor"
-                            stroke-width="2.2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    Back
-                </a>
+                <div class="top-nav-row">
+                    <a href="./index.html" class="btn-back font-sans">
+                        <svg viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1.5L3.5 7L9 12.5" stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Back
+                    </a>
+                    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+                      <img src="./assets/images/homepage/theme_toggle.svg" alt="" />
+                    </button>
+                </div>
             </nav>
 
             <!-- ══════════════════════════════════════════
@@ -926,7 +997,7 @@
                         website, or case study design that feels thoughtful and
                         conversion-aware?</p>
                     <div class="footer-actions">
-                        <a href="#" class="footer-primary font-agrandir">Start
+                        <a href="mailto:nhrushee@gmail.com" class="footer-primary font-agrandir">Start
                             Conversation</a>
                         <a href="#hero"
                             class="footer-secondary font-agrandir">Back to
