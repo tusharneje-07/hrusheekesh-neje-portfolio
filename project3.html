@@ -1,213 +1,1153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Designing India's Largest B2B Healthcare Marketplace | Hrusheekesh Neje</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <style>
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: 'Manrope', sans-serif;
-        background: radial-gradient(circle at 20% 0%, #eef3f8 0%, #f4f4f4 46%, #f2f2f2 100%);
-        color: #121212;
-      }
-      .top-nav {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        padding: 18px 16px;
-        background: rgba(255, 255, 255, 0.84);
-        backdrop-filter: blur(9px);
-      }
-      .top-nav::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.18), transparent);
-      }
-      .wrap {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .top-nav-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .btn-back {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 11px 22px 11px 18px;
-        border-radius: 999px;
-        text-decoration: none;
-        background: #111;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 600;
-      }
-      .btn-back svg { width: 14px; height: 14px; }
-      .theme-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        border: 1px solid #d7d7d7;
-        background: #0b2742;
-        box-shadow: 0 10px 22px rgba(10, 30, 52, 0.25);
-        cursor: pointer;
-      }
-      .theme-toggle img { width: 22px; height: 22px; transition: transform .26s ease, filter .26s ease; }
-      .theme-toggle.is-active img { transform: rotate(180deg); }
-      .stage {
-        min-height: calc(100vh - 90px);
-        padding: 40px 20px 50px;
-        display: grid;
-        place-items: center;
-      }
-      .card {
-        width: min(760px, 100%);
-        padding: clamp(26px, 5vw, 48px);
-        border: 1px solid #e0e0e0;
-        border-radius: 28px;
-        background: rgba(255, 255, 255, 0.82);
-        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.07);
-        text-align: center;
-      }
-      .badge {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        color: #fe941e;
-        text-transform: uppercase;
-      }
-      h1 {
-        margin: 14px 0 10px;
-        font-family: 'Agrandir', 'Manrope', sans-serif;
-        font-size: clamp(30px, 5vw, 54px);
-        line-height: 1.06;
-      }
-      p {
-        margin: 0 auto;
-        max-width: 560px;
-        font-size: clamp(15px, 2.1vw, 18px);
-        color: #575757;
-      }
-      .stack {
-        margin: 34px auto 0;
-        width: min(150px, 100%);
-        height: 120px;
-        position: relative;
-      }
-      .stack-icon {
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: clamp(78px, 19vw, 104px);
-        transform-origin: center;
-        will-change: transform, opacity;
-        opacity: 0;
-        transform: scale(0.72) rotate(-14deg);
-        animation: iconCycle 4.2s ease-in-out infinite;
-      }
-      .stack-icon--figma { animation-delay: 0s; }
-      .stack-icon--xd { animation-delay: 1.4s; }
-      .stack-icon--ps { animation-delay: 2.8s; }
-      .stack-icon--ai { animation-delay: 4.2s; }
-      @keyframes iconCycle {
-        0%, 100% {
-          opacity: 0;
-          transform: perspective(500px) rotateX(72deg) scale(0.72) rotate(-14deg);
-        }
-        12%, 38% {
-          opacity: 1;
-          transform: perspective(500px) rotateX(0deg) scale(1) rotate(0deg);
-        }
-        52% {
-          opacity: 0;
-          transform: perspective(500px) rotateX(-72deg) scale(0.82) rotate(14deg);
-        }
-      }
-      @media (max-width: 640px) {
-        .stack { width: 132px; height: 108px; }
-        .stack-icon { width: 86px; }
-      }
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Designing India's Largest B2B Healthcare Marketplace | Hrusheekesh Neje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/css/styles.css" />
+<style>
+  @font-face {
+    font-family: "Agrandir";
+    src: url("./assets/font/Agrandir/Agrandir-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Agrandir";
+    src: url("./assets/font/Agrandir/Agrandir-TextBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Agrandir";
+    src: url("./assets/font/Agrandir/Agrandir-GrandHeavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
 
-      body[data-theme="dark"] { background: #121212; color: #eceff4; }
-      body[data-theme="dark"] .top-nav { background: rgba(18, 18, 18, 0.84); }
-      body[data-theme="dark"] .card { background: #1c1c1f; border-color: #34343a; box-shadow: 0 24px 50px rgba(0,0,0,.32); }
-      body[data-theme="dark"] h1 { color: #f3f5f8; }
-      body[data-theme="dark"] p { color: #b8c0cd; }
-      body[data-theme="dark"] .theme-toggle { background:#27272e; border-color:#464650; box-shadow: 0 10px 22px rgba(0,0,0,.38); }
-      body[data-theme="dark"] .theme-toggle img { filter: brightness(1.15) saturate(0.9); }
-      body[data-theme="dark"] .btn-back { background: #26262d; color: #eff3f8; border: 1px solid #44444e; }
-      body[data-theme="dark"] .btn-back:hover { background: #2f2f38; }
-    </style>
-  </head>
-  <body>
-    <nav class="top-nav">
-      <div class="wrap">
-        <div class="top-nav-row">
-          <a href="./index.html#projects" class="btn-back">
-            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            Back
-          </a>
-          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
-            <img src="./assets/images/homepage/theme_toggle.svg" alt="" />
-          </button>
-        </div>
+  :root {
+    --ink: #111111;
+    --muted: #5f5f5f;
+    --line: #e8e8e8;
+    --accent: #4cb8e7;
+    --accent-warm: #fe941e;
+    --shell: 1100px;
+    --font-body: "Manrope", sans-serif;
+    --font-display: "Agrandir", "Manrope", sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: #ffffff;
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    max-width: var(--shell);
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  @media (max-width: 768px) { .wrap { padding: 0 24px; } }
+  @media (max-width: 480px) { .wrap { padding: 0 16px; } }
+
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 22px 11px 18px;
+    background: #0f0f0f;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: background .2s;
+  }
+  .btn-back:hover { background: #2a2a2a; }
+  .btn-back svg { width: 14px; height: 14px; }
+
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 18px 0;
+    background: #ffffff;
+    position: sticky;
+  }
+
+  .top-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid #d7d7d7;
+    background: #0b2742;
+    box-shadow: 0 10px 22px rgba(10, 30, 52, 0.25);
+    cursor: pointer;
+  }
+  .theme-toggle img { width: 22px; height: 22px; transition: transform .26s ease, filter .26s ease; }
+  .theme-toggle.is-active img { transform: rotate(180deg); }
+
+  .top-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.2), transparent);
+  }
+
+  .hero {
+    text-align: center;
+    padding: 56px 24px 0;
+    max-width: var(--shell);
+    margin: 0 auto;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+  }
+  .hero-meta-item img { width: 20px; height: 20px; opacity: 0.9; }
+  .hero-meta-item a { color: inherit; text-decoration: none; }
+  .hero-meta-item a:hover { text-decoration: underline; }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.4vw, 48px);
+    font-weight: 800;
+    color: #0d0d0d;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+  .hero-subtitle {
+    font-size: clamp(14px, 1.7vw, 16.5px);
+    color: #666;
+    max-width: 760px;
+    margin: 0 auto 44px;
+    line-height: 1.7;
+  }
+
+  .meta-strip {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+  .meta-item {
+    position: relative;
+    padding: 4px 44px;
+    text-align: center;
+  }
+  .meta-item + .meta-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background: var(--accent);
+  }
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #0c0c0c;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .meta-value {
+    font-size: 15px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: #111;
+  }
+
+  @media (max-width: 640px) {
+    .meta-strip { flex-direction: column; gap: 16px; }
+    .meta-item { padding: 0; }
+    .meta-item + .meta-item::before { display: none; }
+  }
+
+  .hero-img-wrap {
+    max-width: var(--shell);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero-img-wrap img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+  }
+
+  .section { padding: 80px 24px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--accent-warm);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .section-body {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.75;
+    max-width: 860px;
+  }
+  .section-body strong {
+    color: #111;
+    font-weight: 600;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid #eee;
+    padding-top: 48px;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 0 20px;
+    border-right: 1.5px solid #d0d5e0;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label { font-size: 13px; color: #777; line-height: 1.4; }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .principle-card {
+    border: 1px solid #e8edf4;
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 22px 18px;
+  }
+  .principle-icon { width: 44px; height: 44px; margin-bottom: 14px; }
+  .principle-title { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 8px; }
+  .principle-desc { font-size: 13px; color: #666; line-height: 1.65; }
+
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 44px;
+  }
+  .ba-col {
+    border: 1px solid #e7edf4;
+    border-radius: 16px;
+    padding: 24px;
+    background: #fff;
+  }
+  .ba-title {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6a7688;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .ba-list { list-style: none; display: grid; gap: 10px; }
+  .ba-list li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4d5a6d;
+    position: relative;
+    padding-left: 18px;
+  }
+  .ba-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8ba4bf;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .split-card {
+    border: 1px solid #e8edf4;
+    border-radius: 16px;
+    padding: 22px;
+    background: #fff;
+  }
+  .split-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 12px;
+  }
+  .split-list { list-style: none; display: grid; gap: 10px; }
+  .split-list li {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 16px;
+  }
+  .split-list li::before {
+    content: "-";
+    color: #6d84a1;
+    position: absolute;
+    left: 0;
+  }
+
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 38px;
+  }
+  .mini-card {
+    border: 1px solid #e9edf3;
+    border-radius: 16px;
+    padding: 20px;
+    background: #fff;
+  }
+  .mini-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111;
+  }
+  .mini-card p {
+    font-size: 13px;
+    color: #606f83;
+    line-height: 1.65;
+  }
+  .mini-title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6f7f96;
+    margin-bottom: 8px;
+  }
+
+  .wire-wrap {
+    border: 1.5px solid #e5e7ef;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 32px;
+  }
+  .wire-wrap img { width: 100%; display: block; }
+
+  .ia-box {
+    margin-top: 34px;
+    border: 1px solid #e9eef5;
+    border-radius: 16px;
+    padding: 24px;
+    background: #fff;
+  }
+  .ia-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: #111; }
+  .ia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .ia-item {
+    border: 1px solid #edf1f6;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fafcff;
+    font-size: 13px;
+    color: #4f5f74;
+    line-height: 1.5;
+  }
+
+  .timeline {
+    margin-top: 44px;
+    max-width: 700px;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+  .timeline-num {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    background: #d8eaf7;
+    color: #2d6e9e;
+  }
+  .timeline-body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111;
+  }
+  .timeline-body p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.65;
+  }
+
+  .gallery-scroll {
+    margin-top: 34px;
+    border: 1px solid #e8edf4;
+    border-radius: 18px;
+    overflow-x: auto;
+    display: flex;
+    scrollbar-width: none;
+  }
+  .gallery-scroll::-webkit-scrollbar { display: none; }
+  .gallery-item { min-width: 50%; border-right: 1px solid #edf2f8; }
+  .gallery-item:last-child { border-right: none; }
+  .gallery-item img { width: 100%; display: block; }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .outcome-item { text-align: center; }
+  .outcome-number {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: #3b8fd4;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .outcome-label { font-size: 13px; color: #555; line-height: 1.5; }
+
+  .reflections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 60px;
+    margin-top: 48px;
+  }
+  .reflection-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 700;
+    color: #b8e4f5;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .reflection-title { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 10px; }
+  .reflection-desc { font-size: 14px; color: #555; line-height: 1.7; }
+
+  @media (max-width: 1024px) {
+    .principles-grid,
+    .card-grid-3,
+    .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .stats-row .stat-item:nth-child(2) { border-right: none; }
+    .stats-row .stat-item:nth-child(3) { border-right: 1.5px solid #d0d5e0; }
+  }
+  @media (max-width: 768px) {
+    .wrap { padding: 0 16px; }
+    .section { padding: 56px 16px; }
+    .ba-grid,
+    .split-grid,
+    .ia-grid,
+    .reflections-grid,
+    .gallery-item { grid-template-columns: 1fr; }
+    .card-grid-3,
+    .principles-grid,
+    .outcomes-grid { grid-template-columns: 1fr; gap: 18px; }
+    .gallery-item { min-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .meta-strip { gap: 8px; }
+    .meta-item { padding: 8px 20px; }
+  }
+
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  body[data-theme="dark"] {
+    background: #121212;
+    color: #eceff4;
+  }
+  body[data-theme="dark"] .top-nav { background: #121212; }
+  body[data-theme="dark"] .hero-title,
+  body[data-theme="dark"] .section-title,
+  body[data-theme="dark"] .meta-value,
+  body[data-theme="dark"] .principle-title,
+  body[data-theme="dark"] .mini-card h3,
+  body[data-theme="dark"] .timeline-body h3,
+  body[data-theme="dark"] .ia-title,
+  body[data-theme="dark"] .reflection-title,
+  body[data-theme="dark"] .split-card h3 { color: #f3f5f8; }
+  body[data-theme="dark"] .hero-subtitle,
+  body[data-theme="dark"] .section-body,
+  body[data-theme="dark"] .principle-desc,
+  body[data-theme="dark"] .mini-card p,
+  body[data-theme="dark"] .timeline-body p,
+  body[data-theme="dark"] .reflection-desc,
+  body[data-theme="dark"] .outcome-label,
+  body[data-theme="dark"] .stat-label,
+  body[data-theme="dark"] .ba-list li,
+  body[data-theme="dark"] .split-list li,
+  body[data-theme="dark"] .ia-item { color: #b8c0cd; }
+  body[data-theme="dark"] .principle-card,
+  body[data-theme="dark"] .mini-card,
+  body[data-theme="dark"] .split-card,
+  body[data-theme="dark"] .ba-col,
+  body[data-theme="dark"] .ia-box,
+  body[data-theme="dark"] .ia-item,
+  body[data-theme="dark"] .wire-wrap,
+  body[data-theme="dark"] .gallery-scroll { background: #1c1c1f; border-color: #34343a; }
+  body[data-theme="dark"] .theme-toggle { background:#27272e; border-color:#464650; box-shadow: 0 10px 22px rgba(0,0,0,.38); }
+  body[data-theme="dark"] .theme-toggle img { filter: brightness(1.15) saturate(0.9); }
+  body[data-theme="dark"] .section[style*="background:#fafbfe"] { background: #17181c !important; }
+  body[data-theme="dark"] .btn-back { background: #26262d; color: #eff3f8; border: 1px solid #44444e; }
+  body[data-theme="dark"] .btn-back:hover { background: #2f2f38; }
+  body[data-theme="dark"] .stats-row,
+  body[data-theme="dark"] .stat-item,
+  body[data-theme="dark"] .gallery-item { border-color: #34343a; }
+</style>
+</head>
+<body id="hero">
+
+<nav class="top-nav">
+  <div class="wrap">
+    <div class="top-nav-row">
+      <a href="./index.html" class="btn-back">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+      </a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+        <img src="./assets/images/homepage/theme_toggle.svg" alt="" />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-meta reveal-up">
+    <span class="hero-meta-item">
+      <img src="./assets/images/project2/calender_icon.svg" alt="" />
+      Feb 2025 - Sep 2025
+    </span>
+    <span class="hero-meta-item">
+      <img src="./assets/images/project2/user_icon.svg" alt="" />
+      Biddano
+    </span>
+    <span class="hero-meta-item">
+      <img src="./assets/images/project2/link_icon.svg" alt="" />
+      <a href="https://www.biddano.com" target="_blank" rel="noopener">www.biddano.com</a>
+    </span>
+  </div>
+
+  <h1 class="hero-title reveal-up reveal-delay-1">Designing India's Largest B2B Healthcare Marketplace</h1>
+  <p class="hero-subtitle reveal-up reveal-delay-2">
+    From factory to pharmacy - a complete end-to-end UX design for Biddano, connecting manufacturers,
+    distributors, and retailers across India's healthcare supply chain.
+  </p>
+
+  <div class="meta-strip reveal-up reveal-delay-3">
+    <div class="meta-item">
+      <div class="meta-label">Project</div>
+      <div class="meta-value">Biddano</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Scope</div>
+      <div class="meta-value">Responsive Website</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Role</div>
+      <div class="meta-value">UI UX Designer</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Deliverable</div>
+      <div class="meta-value">Research - IA - Wireframes - Hi-Fi UI</div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-img-wrap reveal-up">
+  <img src="./assets/images/project3/project_img_1.png" alt="Biddano marketplace case study hero" />
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">01 Overview</div>
+    <h2 class="section-title reveal-up">What is Biddano?</h2>
+    <p class="section-body reveal-up">
+      <strong>Biddano is India's largest B2B healthcare marketplace.</strong> It connects manufacturers,
+      distributors, and retailers across the full supply chain - from factory floor to pharmacy shelf.
+      With 50,000+ SKUs across pharmaceuticals, medical devices, OTC, and surgical supplies, the platform
+      enables bulk procurement with verified suppliers, transparent pricing, and reliable logistics.
+    </p>
+    <p class="section-body reveal-up" style="margin-top:16px;">
+      I designed the complete digital experience from scratch: user research, information architecture,
+      flow design, interaction patterns, and high-fidelity UI across all core pages.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-item reveal-up">
+        <div class="stat-number">50k+</div>
+        <div class="stat-label">Healthcare SKUs across categories</div>
       </div>
-    </nav>
-    <main class="stage">
-      <article class="card">
-        <span class="badge">Case Study</span>
-        <h1>Designing India's Largest B2B Healthcare Marketplace</h1>
-        <p>Drafting it soon. This case study is in progress while I shape the narrative, visuals, and outcomes for a clean walkthrough.</p>
-        <div class="stack" aria-hidden="true">
-          <img class="stack-icon stack-icon--figma" src="./assets/images/homepage/stack_figma.svg" alt="" />
-          <img class="stack-icon stack-icon--xd" src="./assets/images/homepage/stack_adobe_xd.svg" alt="" />
-          <img class="stack-icon stack-icon--ps" src="./assets/images/homepage/stack_photoshop.svg" alt="" />
-          <img class="stack-icon stack-icon--ai" src="./assets/images/homepage/stack_illustratar.svg" alt="" />
+      <div class="stat-item reveal-up reveal-delay-1">
+        <div class="stat-number">9</div>
+        <div class="stat-label">Website pages designed</div>
+      </div>
+      <div class="stat-item reveal-up reveal-delay-2">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Design system built from scratch</div>
+      </div>
+      <div class="stat-item reveal-up reveal-delay-3">
+        <div class="stat-number">#1</div>
+        <div class="stat-label">B2B healthcare marketplace ambition</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fafbfe; padding-top:64px; padding-bottom:64px;">
+  <div class="section-inner">
+    <div class="section-label reveal-up">02 The Problem</div>
+    <h2 class="section-title reveal-up">A broken supply chain, digitized</h2>
+    <p class="section-body reveal-up">
+      India's healthcare supply chain is fragmented and opaque. Procurement often happens over calls,
+      WhatsApp threads, and manual paper trails - creating trust issues, poor visibility, and daily friction.
+    </p>
+
+    <div class="ba-grid">
+      <div class="ba-col reveal-up">
+        <div class="ba-title">Before - Pain Points</div>
+        <ul class="ba-list">
+          <li>No unified platform to browse verified healthcare suppliers at scale</li>
+          <li>Procurement done via phone calls, WhatsApp, and paper trails</li>
+          <li>No transparent pricing or MOQ information upfront</li>
+          <li>Trust deficit: fake suppliers, expired stock, low accountability</li>
+          <li>No order tracking or fulfillment visibility for buyers</li>
+          <li>Seller onboarding was tedious and manual</li>
+          <li>Small pharmacies lacked access to competitive wholesale pricing</li>
+          <li>No analytics or demand forecasting layer</li>
+        </ul>
+      </div>
+      <div class="ba-col reveal-up reveal-delay-1">
+        <div class="ba-title">After - Design Decisions</div>
+        <ul class="ba-list">
+          <li>Searchable marketplace with verified seller badges and reviews</li>
+          <li>Streamlined RFQ and order flow replacing informal channels</li>
+          <li>Price-per-unit, MOQ, and bulk discounts shown on listing cards</li>
+          <li>Seller verification UI with document status indicators</li>
+          <li>Real-time order tracking with milestone-based progress</li>
+          <li>Self-serve seller onboarding in under 10 steps</li>
+          <li>Buyer dashboard with personalized catalog and pricing</li>
+          <li>Analytics dashboard for sellers to track demand signals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">03 Research & Discovery</div>
+    <h2 class="section-title reveal-up">Listening before designing</h2>
+    <p class="section-body reveal-up">
+      Structured interviews, contextual observation, surveys, and competitive analysis helped uncover the
+      real barriers behind adoption in healthcare procurement workflows.
+    </p>
+
+    <div class="split-grid">
+      <div class="split-card reveal-up">
+        <h3>Research Methods</h3>
+        <ul class="split-list">
+          <li>In-depth interviews with pharmacists, distributors, and manufacturers across Tier 1-3 cities</li>
+          <li>Contextual observation by shadowing pharmacists during ordering</li>
+          <li>Survey + desk research across India's pharma supply market</li>
+          <li>Competitive benchmarking: Pharmarack, PharmEasy B2B, Medikabazaar, Udaan Health</li>
+        </ul>
+      </div>
+      <div class="split-card reveal-up reveal-delay-1">
+        <h3>Key Insights</h3>
+        <ul class="split-list">
+          <li>Trust is the #1 barrier when buyers consider unknown vendors</li>
+          <li>Price discovery is painful; many called 4-6 distributors daily</li>
+          <li>Catalog chaos from inconsistent product naming and spelling variants</li>
+          <li>Speed is critical; long catalog searches break repeat ordering behavior</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fafbfe; padding-top:64px; padding-bottom:64px;">
+  <div class="section-inner">
+    <div class="section-label reveal-up">04 Empathy Mapping</div>
+    <h2 class="section-title reveal-up">Getting inside the user's head</h2>
+    <p class="section-body reveal-up">
+      The primary persona was the pharmacy retailer. Their behavior and anxiety shaped trust architecture,
+      reorder shortcuts, and visibility choices across the product.
+    </p>
+
+    <div class="split-grid">
+      <div class="split-card reveal-up">
+        <h3>Thinks & Feels</h3>
+        <ul class="split-list">
+          <li>"I do not trust unknown distributors - what if medicine is fake?"</li>
+          <li>"I wish I could compare prices without calling everyone manually."</li>
+          <li>"I need better deals but I do not have time to negotiate."</li>
+          <li>Anxiety around expiry stock and returns</li>
+        </ul>
+      </div>
+      <div class="split-card reveal-up reveal-delay-1">
+        <h3>Says & Does</h3>
+        <ul class="split-list">
+          <li>"Send me the rate list on WhatsApp."</li>
+          <li>Reorders the same brands from known distributors each week</li>
+          <li>Tracks inventory in register books or basic spreadsheets</li>
+          <li>"My distributor gives me credit. I will not switch easily."</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="split-grid" style="margin-top:20px;">
+      <div class="split-card reveal-up">
+        <h3>Sees</h3>
+        <ul class="split-list">
+          <li>Competitors adopting newer apps and improving margins</li>
+          <li>WhatsApp dominating B2B commerce in local networks</li>
+          <li>Patients demanding faster availability and broader variety</li>
+          <li>Large distributors providing richer ordering details</li>
+        </ul>
+      </div>
+      <div class="split-card reveal-up reveal-delay-1">
+        <h3>Pain Points & Gains</h3>
+        <ul class="split-list">
+          <li>Pain: No centralized way to discover competitive pricing</li>
+          <li>Pain: Stock-outs caused by unreliable supply visibility</li>
+          <li>Gain: One-click reorder for regular products</li>
+          <li>Gain: Reliable delivery with digital proof and tracking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">05 User Personas</div>
+    <h2 class="section-title reveal-up">Three archetypes, one platform</h2>
+    <p class="section-body reveal-up">
+      The core challenge was balancing three different procurement contexts without making the platform
+      heavy for any one user group.
+    </p>
+
+    <div class="card-grid-3">
+      <article class="mini-card reveal-up">
+        <div class="mini-title">Retail Pharmacist</div>
+        <h3>Price-sensitive daily restocker</h3>
+        <p>
+          Goals: Fast price comparison, maintain supplier credit relationships, reduce manual inventory effort.<br><br>
+          Pain points: Calls 5+ distributors daily, cannot verify credentials online, fears fake products.
+        </p>
+      </article>
+      <article class="mini-card reveal-up reveal-delay-1">
+        <div class="mini-title">Medical Store Owner</div>
+        <h3>Margin and continuity focused buyer</h3>
+        <p>
+          Goals: Improve margins, find backup suppliers, reduce dependence on one distributor.<br><br>
+          Pain points: Frequent stock-outs, poor inventory visibility, inconsistent credit terms.
+        </p>
+      </article>
+      <article class="mini-card reveal-up reveal-delay-2">
+        <div class="mini-title">Ayurvedic Pharmacist</div>
+        <h3>Quality and authenticity focused buyer</h3>
+        <p>
+          Goals: Source authentic herbal medicines, build customer trust, maintain stable inventory.<br><br>
+          Pain points: Hard supplier verification, variable batch quality, limited digital supplier systems.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fafbfe; padding-top:64px; padding-bottom:64px;">
+  <div class="section-inner">
+    <div class="section-label reveal-up">06 Information Architecture</div>
+    <h2 class="section-title reveal-up">Structure before screens</h2>
+    <p class="section-body reveal-up">
+      IA was mapped before visual design to support both buyer and admin journeys while keeping mental
+      models clean and predictable.
+    </p>
+
+    <div class="ia-box reveal-up">
+      <div class="ia-title">Biddano Platform Architecture</div>
+      <div class="ia-grid">
+        <div class="ia-item">Home: Search, trust badges, trending products, shop by brands</div>
+        <div class="ia-item">Categories: Allopathy, Ayurvedic, Generic, Surgical, OTC, Veterinary</div>
+        <div class="ia-item">Product Details: Detailed card, pricing table, add to cart</div>
+        <div class="ia-item">Buyer Flow: Cart, request for quotation, checkout, order tracking</div>
+        <div class="ia-item">Authentication: Sign in, log in, KYC verification</div>
+        <div class="ia-item">Account: Profile settings and operational preferences</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">07 User Flow</div>
+    <h2 class="section-title reveal-up">The buyer's journey mapped</h2>
+    <p class="section-body reveal-up">
+      The primary flow was optimized to reduce friction from discovery to checkout while increasing trust
+      at each critical decision state.
+    </p>
+
+    <div class="ia-box reveal-up">
+      <div class="ia-title">Core Buyer Flow</div>
+      <div class="ia-grid">
+        <div class="ia-item">Homepage</div>
+        <div class="ia-item">Browse Product Listing Page</div>
+        <div class="ia-item">Product Detail Page</div>
+        <div class="ia-item">Cart</div>
+        <div class="ia-item">Order Confirm</div>
+        <div class="ia-item">Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fafbfe; padding-top:64px; padding-bottom:64px;">
+  <div class="section-inner">
+    <div class="section-label reveal-up">08 Design Process</div>
+    <h2 class="section-title reveal-up">How I approached the design</h2>
+    <p class="section-body reveal-up">
+      The project followed a structured, iterative approach grounded in research and validated by real-user
+      testing before final handoff.
+    </p>
+
+    <div class="timeline">
+      <article class="timeline-item reveal-up">
+        <div class="timeline-num">1</div>
+        <div class="timeline-body">
+          <h3>Discovery & Research</h3>
+          <p>Interviews, surveys, desk research, market study, and stakeholder alignment to define scope and success metrics.</p>
         </div>
       </article>
-    </main>
-    <script>
-      const themeToggles = document.querySelectorAll('[data-theme-toggle]');
-      const THEME_STORAGE_KEY = 'hrushee-theme';
-      const applyTheme = (theme) => {
-        const isDark = theme === 'dark';
-        document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        themeToggles.forEach((toggle) => {
-          toggle.classList.toggle('is-active', isDark);
-          toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-        });
-      };
-      const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-      const initialTheme = storedTheme === 'dark' || storedTheme === 'light'
-        ? storedTheme
-        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      applyTheme(initialTheme);
-      themeToggles.forEach((toggle) => {
-        toggle.addEventListener('click', () => {
-          const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          applyTheme(nextTheme);
-          localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-        });
-      });
-    </script>
-  </body>
+      <article class="timeline-item reveal-up reveal-delay-1">
+        <div class="timeline-num">2</div>
+        <div class="timeline-body">
+          <h3>Synthesis & Strategy</h3>
+          <p>Affinity mapping, empathy maps, personas, and problem definition to establish guiding design principles.</p>
+        </div>
+      </article>
+      <article class="timeline-item reveal-up reveal-delay-2">
+        <div class="timeline-num">3</div>
+        <div class="timeline-body">
+          <h3>Architecture & Flows</h3>
+          <p>Information architecture, per-persona user flows, and low-fidelity wireframes to validate structure.</p>
+        </div>
+      </article>
+      <article class="timeline-item reveal-up reveal-delay-3">
+        <div class="timeline-num">4</div>
+        <div class="timeline-body">
+          <h3>Visual Design</h3>
+          <p>Built a trustworthy visual language with deep navy, Biddano blue, and generous whitespace for B2B reliability.</p>
+        </div>
+      </article>
+      <article class="timeline-item reveal-up reveal-delay-4">
+        <div class="timeline-num">5</div>
+        <div class="timeline-body">
+          <h3>High-Fidelity Wireframes</h3>
+          <p>Production-ready UI for all 9 pages with component documentation and responsive breakpoints.</p>
+        </div>
+      </article>
+      <article class="timeline-item reveal-up">
+        <div class="timeline-num">6</div>
+        <div class="timeline-body">
+          <h3>Validation & Iteration</h3>
+          <p>Usability testing with 8 users (pharmacists + distributors), then iteration on critical flows like search and checkout.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">09 Pages Designed</div>
+    <h2 class="section-title reveal-up">Every screen, built with intent</h2>
+    <p class="section-body reveal-up">
+      Each page solved a specific conversion goal and addressed a specific user anxiety in the B2B healthcare flow.
+    </p>
+
+    <div class="card-grid-3">
+      <article class="mini-card reveal-up">
+        <h3>Homepage - Trust in first 60 seconds</h3>
+        <p>Communicated "Factory to Pharmacy" value clearly, reinforced with proof metrics and a single strong CTA.</p>
+      </article>
+      <article class="mini-card reveal-up reveal-delay-1">
+        <h3>Product Listing & Search</h3>
+        <p>Filtering by category, manufacturer, form factor, price band, delivery time, and GST slab for 50,000+ SKUs.</p>
+      </article>
+      <article class="mini-card reveal-up reveal-delay-2">
+        <h3>Cart & Checkout Flow</h3>
+        <p>B2B-ready 3-step flow with GST invoices, credit visibility, split payment support, and multi-supplier consolidation.</p>
+      </article>
+    </div>
+
+    <div class="wire-wrap reveal-up">
+      <img src="./assets/images/project3/project_img_2.png" alt="Biddano page design showcase 1" />
+    </div>
+    <div class="wire-wrap reveal-up">
+      <img src="./assets/images/project3/project_img_3.png" alt="Biddano page design showcase 2" />
+    </div>
+    <div class="wire-wrap reveal-up">
+      <img src="./assets/images/project3/project_img_4.png" alt="Biddano page design showcase 3" />
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fafbfe; padding-top:64px; padding-bottom:64px;">
+  <div class="section-inner">
+    <div class="section-label reveal-up">10 Design Showcase</div>
+    <h2 class="section-title reveal-up">Interface snapshots across the buyer funnel</h2>
+
+    <div class="gallery-scroll reveal-up">
+      <figure class="gallery-item">
+        <img src="./assets/images/project3/project_img_5.png" alt="Biddano showcase screen 1" />
+      </figure>
+      <figure class="gallery-item">
+        <img src="./assets/images/project3/project_img_6.png" alt="Biddano showcase screen 2" />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">11 Design Principles</div>
+    <h2 class="section-title reveal-up">What guided every decision</h2>
+    <p class="section-body reveal-up">
+      The final product direction stayed anchored to three principles that consistently resolved trade-offs.
+    </p>
+
+    <div class="principles-grid">
+      <article class="principle-card reveal-up">
+        <img src="./assets/images/project3/trust_by_design_icon.svg" alt="" class="principle-icon" />
+        <h3 class="principle-title">Trust by Design</h3>
+        <p class="principle-desc">Verified seller badges, GST transparency, drug license validation, and clear return policy visibility were designed to earn confidence before first purchase.</p>
+      </article>
+      <article class="principle-card reveal-up reveal-delay-1">
+        <img src="./assets/images/project3/speed_is_the_feature_icon.svg" alt="" class="principle-icon" />
+        <h3 class="principle-title">Speed is the Feature</h3>
+        <p class="principle-desc">Smart search, one-click reorder, saved carts, and pre-filled checkout fields shortened the path from intent to order.</p>
+      </article>
+      <article class="principle-card reveal-up reveal-delay-2">
+        <img src="./assets/images/project3/clarity_over_completeness_icon.svg" alt="" class="principle-icon" />
+        <h3 class="principle-title">Clarity over Completeness</h3>
+        <p class="principle-desc">Surfaced the most relevant decision data first: price, availability, and delivery ETA, instead of overwhelming spec-heavy views.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fafbfe; padding-top:64px; padding-bottom:64px;">
+  <div class="section-inner">
+    <div class="section-label reveal-up">12 Impact & Outcome</div>
+    <h2 class="section-title reveal-up">Design that moved the needle</h2>
+    <p class="section-body reveal-up">
+      Post-launch usability testing and analytics validated that design choices translated to measurable user and business outcomes.
+    </p>
+
+    <div class="outcomes-grid">
+      <div class="outcome-item reveal-up">
+        <div class="outcome-number">50k+</div>
+        <div class="outcome-label">SKUs organized into a navigable catalog from a previously unstructured dataset</div>
+      </div>
+      <div class="outcome-item reveal-up reveal-delay-1">
+        <div class="outcome-number">68%</div>
+        <div class="outcome-label">Reduction in time-to-first-order for new buyers vs legacy WhatsApp workflow</div>
+      </div>
+      <div class="outcome-item reveal-up reveal-delay-2">
+        <div class="outcome-number">3 min</div>
+        <div class="outcome-label">Average repeat-order completion time, down from 20+ minutes via calls</div>
+      </div>
+      <div class="outcome-item reveal-up reveal-delay-3">
+        <div class="outcome-number">100%</div>
+        <div class="outcome-label">Pages designed end-to-end from scratch with full design ownership</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label reveal-up">13 Reflections & Learnings</div>
+    <h2 class="section-title reveal-up">What I learned designing Biddano</h2>
+
+    <div class="reflections-grid">
+      <div class="reflection-item reveal-up">
+        <div class="reflection-num">01</div>
+        <div class="reflection-title">Domain expertise unlocks design quality</div>
+        <div class="reflection-desc">Healthcare procurement UX needs regulatory grounding: Schedule H constraints, GSTIN requirements, and drug license validation.</div>
+      </div>
+      <div class="reflection-item reveal-up reveal-delay-1">
+        <div class="reflection-num">02</div>
+        <div class="reflection-title">Trust is a design problem</div>
+        <div class="reflection-desc">Trust improved through structure, not slogans: verification in context, transparent pricing, and visible return policy at checkout.</div>
+      </div>
+      <div class="reflection-item reveal-up reveal-delay-2">
+        <div class="reflection-num">03</div>
+        <div class="reflection-title">Multi-sided marketplaces require balance</div>
+        <div class="reflection-desc">Buyer-facing decisions always impact seller operations. Designing both sides in parallel prevented one-sided optimizations.</div>
+      </div>
+      <div class="reflection-item reveal-up reveal-delay-3">
+        <div class="reflection-num">04</div>
+        <div class="reflection-title">B2B users expect B2C-level polish</div>
+        <div class="reflection-desc">Business users compare experiences with top consumer apps daily. Polished UX is essential for adoption, not optional.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer" class="relative z-10 w-full px-0 pb-0">
+  <div class="footer-shell">
+    <div class="footer-content reveal-up">
+      <p class="footer-intro">Looking for product, website, or case study design that feels thoughtful and conversion-aware?</p>
+      <div class="footer-actions">
+        <a href="mailto:nhrushee@gmail.com" class="footer-primary">Start Conversation</a>
+        <a href="#hero" class="footer-secondary">Back to Top</a>
+      </div>
+    </div>
+    <div class="footer-shots" aria-hidden="true">
+      <img src="./assets/images/homepage/footer_SS1.png" alt="Project screenshot 1" class="footer-shot footer-shot-1" />
+      <img src="./assets/images/homepage/footer_SS2.png" alt="Project screenshot 2" class="footer-shot footer-shot-2" />
+      <img src="./assets/images/homepage/footer_SS3.png" alt="Project screenshot 3" class="footer-shot footer-shot-3" />
+      <img src="./assets/images/homepage/footer_SS4.png" alt="Project screenshot 4" class="footer-shot footer-shot-4" />
+    </div>
+    <div class="footer-meta">
+      <span class="footer-copy">Copyright (c) <span data-current-year></span></span>
+      <span class="footer-name">Hrusheekesh Neje</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const themeToggles = document.querySelectorAll('[data-theme-toggle]');
+  const THEME_STORAGE_KEY = 'hrushee-theme';
+
+  const applyTheme = (theme) => {
+    const isDark = theme === 'dark';
+    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    themeToggles.forEach((toggle) => {
+      toggle.classList.toggle('is-active', isDark);
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    });
+  };
+
+  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  const initialTheme = storedTheme === 'dark' || storedTheme === 'light'
+    ? storedTheme
+    : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  applyTheme(initialTheme);
+  themeToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+</script>
+</body>
 </html>
