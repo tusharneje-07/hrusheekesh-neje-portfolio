@@ -154,57 +154,288 @@
     </style>
   </head>
   <body>
-    <nav class="top-nav">
-      <div class="wrap">
-        <div class="top-nav-row">
-          <a href="./index.html#projects" class="btn-back">
-            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            Back
-          </a>
-          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
-            <img src="./assets/images/homepage/theme_toggle.svg" alt="" />
-          </button>
-        </div>
-      </div>
-    </nav>
-    <main class="stage">
-      <article class="card">
-        <span class="badge">Case Study</span>
-        <h1>Biddano Quick Commerce: Mobile Application</h1>
-        <p>Drafting it soon. This case study is in progress while I prepare the problem framing, process, and final product journey.</p>
-        <div class="stack" aria-hidden="true">
-          <img class="stack-icon stack-icon--figma" src="./assets/images/homepage/stack_figma.svg" alt="" />
-          <img class="stack-icon stack-icon--xd" src="./assets/images/homepage/stack_adobe_xd.svg" alt="" />
-          <img class="stack-icon stack-icon--ps" src="./assets/images/homepage/stack_photoshop.svg" alt="" />
-          <img class="stack-icon stack-icon--ai" src="./assets/images/homepage/stack_illustratar.svg" alt="" />
-        </div>
-      </article>
-    </main>
+
+    <div class="wrap">
+
+        <!-- ══════════════════════════════════════════
+     BACK BUTTON
+═════════════════════════════════════════════ -->
+        <nav class="top-nav">
+            <div class="top-nav-row">
+                <a href="./index.html" class="btn-back font-sans">
+                    <svg viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 1.5L3.5 7L9 12.5" stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Back
+                </a>
+                <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" aria-pressed="false">
+                  <img src="./assets/images/homepage/theme_toggle.svg" alt="" />
+                </button>
+            </div>
+        </nav>
+
+        <!-- ══════════════════════════════════════════
+     PROJECT HEADER
+═════════════════════════════════════════════ -->
+        <header class="project-header reveal font-agrandir">
+
+            <!-- Meta row: calendar | user | link -->
+            <div class="meta-row">
+                <div class="meta-item">
+                    <img src="./assets/images/project1/calender_icon.svg"
+                        alt aria-hidden="true" />
+                    Jan 2024
+                </div>
+                <div class="meta-item">
+                    <img src="./assets/images/project1/user_icon.svg" alt
+                        aria-hidden="true" />
+                    Biddano
+                </div>
+                <div class="meta-item">
+                    <img src="./assets/images/project1/link_icon.svg" alt
+                        aria-hidden="true" />
+                    <a href="https://biddano.com/" target="_blank"
+                        rel="noopener">https://biddano.com/</a>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="project-title font-agrandir mb-2">Biddano Quick Commerce: Mobile Application</h1>
+
+            <!-- Subtitle -->
+            <p class="project-subtitle">
+                Crafting a hyperlocal quick commerce experience to bring local pharmacies online and empower them to compete with major e-commerce players.
+            </p>
+
+            <!-- Tags: pipe-separated -->
+            <div class="tags-row">
+                <div class="tag-item">
+                    <div class="tag-label">Project</div>
+                    <div class="tag-value">Biddano</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-label">Scope</div>
+                    <div class="tag-value">Quick Commerce Mobile App</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-label">Role</div>
+                    <div class="tag-value">UI UX Designer</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-label">Deliverable</div>
+                    <div class="tag-value">High-Fidelity UI & Prototype</div>
+                </div>
+            </div>
+
+            <!-- Hero image (project_img_1) -->
+            <div class="hero-img-wrap">
+                <img
+                    src="./assets/images/project4/project_img_1.png"
+                    alt="Biddano Quick Commerce App - Hero"
+                    loading="eager" />
+            </div>
+
+        </header>
+
+        <!-- ══════════════════════════════════════════
+     01 — OVERVIEW
+═════════════════════════════════════════════ -->
+        <section class="section reveal">
+            <span class="sec-label">01 Overview</span>
+            <h2 class="sec-title">Bringing Local Pharmacies Online</h2>
+            <p class="sec-body">Biddano Quick Commerce is a hyper‑local mobile marketplace that connects neighbourhood pharmacies with customers who need medicines at short notice. The product aims to give small, independent pharmacies a digital sales channel that rivals large e‑commerce players, while keeping the ordering experience fast, trustworthy and affordable.</p>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     02 — THE PROBLEM
+═════════════════════════════════════════════ -->
+        <section class="section reveal">
+            <span class="sec-label">02 The Problem</span>
+            <h2 class="sec-title">Low‑Tech, High‑Friction Ordering</h2>
+            <p class="sec-body">Local pharmacies still rely on phone calls, WhatsApp chats, and handwritten order books. This leads to:</p>
+            <ul class="ba-list">
+                <li>Lost orders and duplicate requests</li>
+                <li>Opacity on pricing, stock availability and delivery ETA</li>
+                <li>Trust gaps – customers fear counterfeit or expired medicines</li>
+                <li>Time‑consuming manual inventory & bookkeeping</li>
+            </ul>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     03 — RESEARCH & DISCOVERY
+═════════════════════════════════════════════ -->
+        <section class="section reveal">
+            <span class="sec-label">03 Research & Discovery</span>
+            <h2 class="sec-title">Understanding local pharmacy pain points</h2>
+            <p class="sec-body">We conducted in‑depth interviews with 12 independent pharmacy owners across three tier‑2 cities, shadowed ordering processes, and ran a survey of 150 end‑customers to map the end‑to‑end buying journey.</p>
+            <div class="split-grid">
+                <div class="split-card reveal">
+                    <h3>Research Methods</h3>
+                    <ul class="split-list">
+                        <li>On‑site observation of order taking</li>
+                        <li>Phone/WhatsApp interview recordings</li>
+                        <li>Competitive audit of regional delivery apps</li>
+                        <li>Quantitative survey on ordering frequency & price sensitivity</li>
+                    </ul>
+                </div>
+                <div class="split-card reveal">
+                    <h3>Key Insights</h3>
+                    <ul class="split-list">
+                        <li>Trust is the biggest barrier – customers doubt product authenticity.</li>
+                        <li>Speed matters – average order fulfillment > 48 h.</li>
+                        <li>Pricing transparency drives repeat orders.</li>
+                        <li>Pharmacies need a lightweight inventory view on mobile.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ss-wrap reveal" style="margin-top:32px;">
+                <img src="./assets/images/project4/proj imag 2.png" alt="Research findings collage" loading="lazy" />
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     04 — DESIGN DECISIONS
+═════════════════════════════════════════════ -->
+        <section class="section">
+            <span class="sec-label">04 Design Decisions</span>
+            <h2 class="sec-title">Designing a fast, trustworthy mobile flow</h2>
+            <div class="ba-grid">
+                <div class="ba-card reveal">
+                    <div class="ba-card-label">Before – Pain Points</div>
+                    <ul class="ba-list">
+                        <li>No clear product image – users can’t verify authenticity.</li>
+                        <li>Manual address entry on each order – adds friction.</li>
+                        <li>Pricing hidden in text – no quick comparison.</li>
+                        <li>Order status only via phone call – no visibility.</li>
+                    </ul>
+                </div>
+                <div class="ba-card reveal">
+                    <div class="ba-card-label">After – Design Solutions</div>
+                    <ul class="ba-list">
+                        <li>High‑resolution product thumbnails with verification badge.</li>
+                        <li>Saved address book and auto‑complete for checkout.</li>
+                        <li>Transparent price table with discount tiers.</li>
+                        <li>Real‑time order tracking timeline within the app.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ss-wrap" style="margin-top:32px;">
+                <img src="./assets/images/project4/proj imag 3.png" alt="Design decision overview" loading="lazy" />
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     05 — VISUAL LANGUAGE
+═════════════════════════════════════════════ -->
+        <section class="section reveal">
+            <span class="sec-label">05 Visual Language</span>
+            <h2 class="sec-title">A calming, trustworthy UI for quick commerce</h2>
+            <p class="sec-body">The visual system blends a soft teal‑blue palette with generous whitespace, signalling reliability while keeping the experience snappy.</p>
+            <div class="vl-cols">
+                <div>
+                    <h3 class="vl-col-title">Color Palette</h3>
+                    <p class="vl-col-body">Primary teal, complementary warm orange for CTAs, and muted neutrals for background keep focus on product images and pricing.</p>
+                </div>
+                <div>
+                    <h3 class="vl-col-title">Typography</h3>
+                    <p class="vl-col-body">Agrandir for headings, Manrope for body – high‑contrast, legible at a glance on small screens.</p>
+                </div>
+            </div>
+            <div class="ss-wrap" style="margin-top:32px;">
+                <img src="./assets/images/project4/Prescription Complexity.svg" alt="Prescription complexity diagram" loading="lazy" />
+            </div>
+            <div class="ss-wrap" style="margin-top:24px;">
+                <img src="./assets/images/project4/8 Verticals.svg" alt="Eight verticals overview" loading="lazy" />
+            </div>
+            <div class="ss-wrap" style="margin-top:24px;">
+                <img src="./assets/images/project4/speed_vs_trust.svg" alt="Speed vs trust visual" loading="lazy" />
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     06 — OUTCOMES & IMPACT
+═════════════════════════════════════════════ -->
+        <section class="section reveal">
+            <span class="sec-label">06 Outcomes & Impact</span>
+            <h2 class="sec-title">Measured success after launch</h2>
+            <p class="sec-body">Within six weeks of beta release the app delivered tangible business results for partner pharmacies.</p>
+            <div class="outcomes-grid">
+                <div class="outcome-item reveal">
+                    <div class="outcome-number">+45%</div>
+                    <div class="outcome-label">Increase in repeat orders</div>
+                </div>
+                <div class="outcome-item reveal">
+                    <div class="outcome-number">2 min</div>
+                    <div class="outcome-label">Average order completion time (down from 20 min)</div>
+                </div>
+                <div class="outcome-item reveal">
+                    <div class="outcome-number">78%</div>
+                    <div class="outcome-label">Customer trust rating (post‑order survey)</div>
+                </div>
+                <div class="outcome-item reveal">
+                    <div class="outcome-number">5 k</div>
+                    <div class="outcome-label">Orders processed in first month</div>
+                </div>
+            </div>
+            <div class="ss-wrap" style="margin-top:32px;">
+                <img src="./assets/images/project4/proj imag 4.png" alt="Key metrics dashboard" loading="lazy" />
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     08 — REFLECTIONS
+═════════════════════════════════════════════ -->
+        <section class="section reveal">
+            <span class="sec-label">08 Reflections</span>
+            <h2 class="sec-title">Key learnings from the quick‑commerce journey</h2>
+            <div class="reflections-grid">
+                <div class="reflection-item reveal">
+                    <div class="big-num">01</div>
+                    <h3 class="refl-title">Trust is earned visually</h3>
+                    <p class="refl-body">Verified badges, clear product photos and transparent pricing reduced perceived risk dramatically.</p>
+                </div>
+                <div class="reflection-item reveal">
+                    <div class="big-num">02</div>
+                    <h3 class="refl-title">Speed wins repeat business</h3>
+                    <p class="refl-body">Reducing order‑to‑delivery time to under 2 minutes on‑screen kept users coming back.</p>
+                </div>
+                <div class="reflection-item reveal">
+                    <div class="big-num">03</div>
+                    <h3 class="refl-title">Mobile‑first inventory matters</h3>
+                    <p class="refl-body">A lightweight stock view on the phone empowered pharmacists to manage SKUs without a desktop.</p>
+                </div>
+                <div class="reflection-item reveal">
+                    <div class="big-num">04</div>
+                    <h3 class="refl-title">Data informs iteration</h3>
+                    <p class="refl-body">Early analytics on order funnels guided rapid UI tweaks that lifted conversion by 20%.</p>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /wrap -->
+
+    <!-- ══════════════════════════════════════════════
+   FOOTER  (provided markup, adapted)
+════════════════════════════════════════════════ -->
+    <footer id="footer" class="relative z-10 w-full px-0 pb-0 mt-10">
+    </footer>
+    <script src="./assets/js/main.js"></script>
+
     <script>
-      const themeToggles = document.querySelectorAll('[data-theme-toggle]');
-      const THEME_STORAGE_KEY = 'hrushee-theme';
-      const applyTheme = (theme) => {
-        const isDark = theme === 'dark';
-        document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        themeToggles.forEach((toggle) => {
-          toggle.classList.toggle('is-active', isDark);
-          toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-        });
-      };
-      const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-      const initialTheme = storedTheme === 'dark' || storedTheme === 'light'
-        ? storedTheme
-        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      applyTheme(initialTheme);
-      themeToggles.forEach((toggle) => {
-        toggle.addEventListener('click', () => {
-          const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          applyTheme(nextTheme);
-          localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-        });
-      });
-    </script>
-  </body>
+/* Scroll Reveal */
+const els = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+els.forEach(el => io.observe(el));
+</script>
+</body>
 </html>

@@ -1,0 +1,462 @@
+{
+  "portfolio_proj_1": {
+    "project_id": 1,
+    "source_pdf": "Keywordscouterai_Redesign.pdf",
+    "image_dir": "assets/images/portfolio_proj_1",
+    "total_segments": 14,
+    "segment_width": 1920,
+    "segment_height": 1080,
+    "segments": [
+      {
+        "index": 1,
+        "filename": "seg_001.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 2,
+        "filename": "seg_002.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 3,
+        "filename": "seg_003.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 4,
+        "filename": "seg_004.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 5,
+        "filename": "seg_005.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 6,
+        "filename": "seg_006.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 7,
+        "filename": "seg_007.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 8,
+        "filename": "seg_008.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 9,
+        "filename": "seg_009.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 10,
+        "filename": "seg_010.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 11,
+        "filename": "seg_011.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 12,
+        "filename": "seg_012.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 13,
+        "filename": "seg_013.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 14,
+        "filename": "seg_014.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": true
+      }
+    ]
+  },
+  "portfolio_proj_2": {
+    "project_id": 2,
+    "source_pdf": "Redesigning_Keyword_Scouters_Chrome_Extension_Dashboard.pdf",
+    "image_dir": "assets/images/portfolio_proj_2",
+    "total_segments": 14,
+    "segment_width": 1920,
+    "segment_height": 1080,
+    "segments": [
+      {
+        "index": 1,
+        "filename": "seg_001.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 2,
+        "filename": "seg_002.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 3,
+        "filename": "seg_003.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 4,
+        "filename": "seg_004.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 5,
+        "filename": "seg_005.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 6,
+        "filename": "seg_006.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 7,
+        "filename": "seg_007.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 8,
+        "filename": "seg_008.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 9,
+        "filename": "seg_009.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 10,
+        "filename": "seg_010.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 11,
+        "filename": "seg_011.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 12,
+        "filename": "seg_012.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 13,
+        "filename": "seg_013.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 14,
+        "filename": "seg_014.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": true
+      }
+    ]
+  },
+  "portfolio_proj_3": {
+    "project_id": 3,
+    "source_pdf": "Designing_Indias_Largest_B2B_Healthcare_Marketplace.pdf",
+    "image_dir": "assets/images/portfolio_proj_3",
+    "total_segments": 17,
+    "segment_width": 1920,
+    "segment_height": 1080,
+    "segments": [
+      {
+        "index": 1,
+        "filename": "seg_001.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 2,
+        "filename": "seg_002.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 3,
+        "filename": "seg_003.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 4,
+        "filename": "seg_004.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 5,
+        "filename": "seg_005.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 6,
+        "filename": "seg_006.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 7,
+        "filename": "seg_007.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 8,
+        "filename": "seg_008.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 9,
+        "filename": "seg_009.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 10,
+        "filename": "seg_010.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 11,
+        "filename": "seg_011.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 12,
+        "filename": "seg_012.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 13,
+        "filename": "seg_013.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 14,
+        "filename": "seg_014.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 15,
+        "filename": "seg_015.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 16,
+        "filename": "seg_016.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 17,
+        "filename": "seg_017.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": true
+      }
+    ]
+  },
+  "portfolio_proj_4": {
+    "project_id": 4,
+    "source_pdf": "Biddano_Quick_Commerce.pdf",
+    "image_dir": "assets/images/portfolio_proj_4",
+    "total_segments": 15,
+    "segment_width": 1920,
+    "segment_height": 1080,
+    "segments": [
+      {
+        "index": 1,
+        "filename": "seg_001.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 2,
+        "filename": "seg_002.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 3,
+        "filename": "seg_003.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 4,
+        "filename": "seg_004.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 5,
+        "filename": "seg_005.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 6,
+        "filename": "seg_006.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 7,
+        "filename": "seg_007.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 8,
+        "filename": "seg_008.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 9,
+        "filename": "seg_009.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 10,
+        "filename": "seg_010.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 11,
+        "filename": "seg_011.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 12,
+        "filename": "seg_012.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 13,
+        "filename": "seg_013.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 14,
+        "filename": "seg_014.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": false
+      },
+      {
+        "index": 15,
+        "filename": "seg_015.jpg",
+        "width": 1920,
+        "height": 1080,
+        "is_last": true
+      }
+    ]
+  }
+}
